@@ -4,121 +4,73 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h1>Working on it</h1>
+					<h1>Package</h1>
+					<div id="pricing" class="container-fluid" style="background-color:LightSteelBlue">
+						<div class="text-center">
+						  <h2>Pricing</h2>
+						  <h4>Package Plan</h4>
+						</div>
+						<div class="row slideanim" >
+						  <div class="col-sm-4 col-xs-12">
+							<div class="panel panel-default text-center" >
+							  <div class="panel-heading" >
+								<h1>Basic</h1>
+							  </div>
+							  <div class="panel-body">
+								<p><strong>2</strong> Mill</p>
+								<p><strong>2</strong> Mill</p>
+								<p><strong>2</strong> Mill</p>
+								<p><strong>2</strong> Mill</p>
+								<p><strong>Endless</strong> Amet</p>
+							  </div>
+							  <div class="panel-footer">
+								<h3>4 Thousend</h3>
+								<h4>per month</h4>
+								<button class="btn btn-lg" style="background-color:Gainsboro" >Edit</button>
+							  </div>
+							</div>      
+						  </div>     
+						  <div class="col-sm-4 col-xs-12">
+							<div class="panel panel-default text-center">
+							  <div class="panel-heading">
+								<h1>Pro</h1>
+							  </div>
+							  <div class="panel-body">
+								<p><strong>3</strong> Mill</p>
+								<p><strong>3</strong> Mill</p>
+								<p><strong>3</strong> Mill</p>
+								<p><strong>3</strong> Mill</p>
+								<p><strong>Endless</strong> Amet</p>
+							  </div>
+							  <div class="panel-footer">
+								<h3>6 Thousend</h3>
+								<h4>per month</h4>
+								<button class="btn btn-lg" style="background-color:Gainsboro">Edit</button>
+							  </div>
+							</div>      
+						  </div>       
+						  <div class="col-sm-4 col-xs-12">
+							<div class="panel panel-default text-center">
+							  <div class="panel-heading">
+								<h1>Premium</h1>
+							  </div>
+							  <div class="panel-body">
+								<p><strong>5</strong> MIll</p>
+								<p><strong>5</strong> MIll</p>
+								<p><strong>5</strong> MIll</p>
+								<p><strong>5</strong> Mill</p>
+								<p><strong>Endless</strong> Amet</p>
+							  </div>
+							  <div class="panel-footer">
+								<h3>8 Thousend</h3>
+								<h4>per month</h4>
+								<button class="btn btn-lg" style="background-color:Gainsboro">Edit</button>
+							  </div>
+							</div>      
+						  </div>    
+						</div>
+  					</div>
 				</div>
 			</div>
 		</div>
-					{{-- <h3 class="page-title">Panels</h3>
-					<div class="row">
-						<div class="col-md-8">
-							<!-- PANEL HEADLINE -->
-							<div class="panel panel-headline">
-								<div class="panel-heading">
-									<h3 class="panel-title">Panel Headline</h3>
-									<p class="panel-subtitle">Panel to display most important information</p>
-								</div>
-								<div class="panel-body">
-									<h4>Panel Content</h4>
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
-								</div>
-							</div>
-							<!-- END PANEL HEADLINE -->
-						</div>
-						<div class="col-md-4">
-							<!-- PANEL NO PADDING -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Panel No Padding</h3>
-									<div class="right">
-										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
-									</div>
-								</div>
-								<div class="panel-body no-padding bg-primary text-center">
-									<div class="padding-top-30 padding-bottom-30">
-										<i class="fa fa-thumbs-o-up fa-5x"></i>
-										<h3>No Content Padding</h3>
-									</div>
-								</div>
-							</div>
-							<!-- END PANEL NO PADDING -->
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4">
-							<!-- PANEL DEFAULT -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Panel Default</h3>
-									<div class="right">
-										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
-									</div>
-								</div>
-								<div class="panel-body">
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
-								</div>
-							</div>
-							<!-- END PANEL DEFAULT -->
-						</div>
-						<div class="col-md-4">
-							<!-- PANEL NO CONTROLS -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Panel No Right Controls</h3>
-								</div>
-								<div class="panel-body">
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
-								</div>
-							</div>
-							<!-- END PANEL NO CONTROLS -->
-						</div>
-						<div class="col-md-4">
-							<!-- PANEL WITH FOOTER -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Panel With Footer</h3>
-									<div class="right">
-										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
-									</div>
-								</div>
-								<div class="panel-body">
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array.</p>
-								</div>
-								<div class="panel-footer">
-									<h5>Panel Footer</h5>
-								</div>
-							</div>
-							<!-- END PANEL WITH FOOTER -->
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4">
-							<!-- PANEL SCROLLING -->
-							<div id="panel-scrolling-demo" class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Panel Scrolling</h3>
-								</div>
-								<div class="panel-body">
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
-								</div>
-							</div>
-							<!-- END PANEL SCROLLING -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END MAIN CONTENT -->
-		</div>
-		<!-- END MAIN -->
-		<div class="clearfix"></div>
-		<footer>
-			<div class="container-fluid">
-				<p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
-			</div>
-		</footer> 
-	</div>--}}
 @endsection
