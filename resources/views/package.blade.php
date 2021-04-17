@@ -17,11 +17,11 @@
 								<h1>Basic</h1>
 							  </div>
 							  <div class="panel-body">
-								<p><strong>2</strong> Mill</p>
-								<p><strong>2</strong> Mill</p>
-								<p><strong>2</strong> Mill</p>
-								<p><strong>2</strong> Mill</p>
-								<p><strong>Endless</strong> Amet</p>
+								<p><strong>3</strong> Mill</p>
+								<p><strong>Normal</strong> Classroom</p>
+								{{-- <p><strong>2</strong> Mill</p>
+								<p><strong>2</strong> Mill</p> --}}
+								<p><strong>Unlimited</strong> Gaming</p>
 							  </div>
 							  <div class="panel-footer">
 								<h3>4 Thousend</h3>
@@ -36,11 +36,11 @@
 								<h1>Pro</h1>
 							  </div>
 							  <div class="panel-body">
-								<p><strong>3</strong> Mill</p>
-								<p><strong>3</strong> Mill</p>
-								<p><strong>3</strong> Mill</p>
-								<p><strong>3</strong> Mill</p>
-								<p><strong>Endless</strong> Amet</p>
+								<p><strong>5</strong> Mill</p>
+								<p><strong>Projector</strong> Classroom</p>
+								{{-- <p><strong>3</strong> Mill</p>
+								<p><strong>3</strong> Mill</p> --}}
+								<p><strong>Unlimited</strong> Gaming</p>
 							  </div>
 							  <div class="panel-footer">
 								<h3>6 Thousend</h3>
@@ -55,11 +55,11 @@
 								<h1>Premium</h1>
 							  </div>
 							  <div class="panel-body">
-								<p><strong>5</strong> MIll</p>
-								<p><strong>5</strong> MIll</p>
-								<p><strong>5</strong> MIll</p>
-								<p><strong>5</strong> Mill</p>
-								<p><strong>Endless</strong> Amet</p>
+								<p><strong>Unlimited</strong> MIll</p>
+								<p><strong>Digital</strong> Classroom</p>
+								{{-- <p><strong>5</strong> MIll</p>
+								<p><strong>5</strong> Mill</p> --}}
+								<p><strong>Unlimited</strong> Gaming</p>
 							  </div>
 							  <div class="panel-footer">
 								<h3>8 Thousend</h3>
