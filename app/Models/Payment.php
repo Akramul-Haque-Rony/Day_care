@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class baby extends Model
+class Payment extends Model
 {
-    protected $fillable = ['babyname','parent_id','email'];
+    use HasFactory;
+    protected $guarded = [];
 }

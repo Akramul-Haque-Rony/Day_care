@@ -32,9 +32,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 </head>
-<body> 
-    <div id="app">
-        <nav class="navbar navbar-default navbar-fixed-top bg-primary">
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-fixed-top bg-primary">
 			<div class="brand">
 				<a href="{{ route('duplicate') }}"><img src="{{asset('assets/img/logo-dark.png')}}" alt="Klorofil Logo" class="img-responsive logo"></a>
 			</div>
@@ -77,28 +77,27 @@
 							</ul>
 						</li>
 							<li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+								<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+									{{ Auth::user()->name }}
+								</a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="{{ route('logout') }}"
+										onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();">
+										{{ __('Logout') }}
+									</a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>												
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+										@csrf
+									</form>
+								</div>
+							</li>												
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<div id="wrapper">
-        <div id="sidebar-nav" class="sidebar">
+		<div id="sidebar-nav" class="sidebar">
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
@@ -106,34 +105,52 @@
 						{{-- <li><a href="{{ route('profile') }}" class=""><i class="lnr lnr-dice"></i> <span>Profile</span></a></li> --}}
 						<li><a href="{{ route('baby.show') }}" class=""><i class="lnr lnr-code"></i> <span>Parents</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Baby</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
+							<a href="#baby" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Baby</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="baby" class="collapse ">
 								<ul class="nav">
 									<li><a href="{{ route('baby.index') }}" class="">Baby List</a></li>
 									<li><a href="{{ route('baby.create') }}" class="">Add Baby</a></li>
 								</ul>
 							</div>
 						</li>
-						<li><a href="{{ route('package') }}" class=""><i class="lnr lnr-cog"></i> <span>Package</span></a></li>
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Employee</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
+							<a href="#Package" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Package</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="Package" class="collapse ">
+								<ul class="nav">
+									<li><a href="{{ route('package.index') }}" class="">Package Class</a></li>
+									<li><a href="{{ route('packageprice.index') }}" class="">Package Price</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#Employee" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Employee</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="Employee" class="collapse ">
 								<ul class="nav">
 									<li><a href="{{ route('employee.index') }}" class="">Employee List</a></li>
 									<li><a href="{{ route('employee.create') }}" class="">Add Employee</a></li>
 								</ul>
 							</div>
 						</li>
-						<li><a href="{{ route('notifications') }}" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>					
-						<li><a href="{{ route('payments') }}" class=""><i class="lnr lnr-dice"></i> <span>Payments</span></a></li>
+						<li>
+							<a href="#payment" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Payment</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="payment" class="collapse ">
+								<ul class="nav">
+									<li><a href="{{ route('payment.create') }}" class="">payment</a></li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 				</nav>
 			</div>
 		</div>
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+		<div class="main">
+			<div class="main-content">
+				<div class="container-fluid">
+					@yield('content')
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
 	<script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>

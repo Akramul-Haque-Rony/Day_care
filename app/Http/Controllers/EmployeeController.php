@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\employee;
+use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
@@ -18,7 +20,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = employee::all();
+        $employees = User::where('role', 'employee')->get();
+        
         return view('employee.index')->with('employees', $employees);
     }
 
@@ -43,13 +46,15 @@ class EmployeeController extends Controller
         $this->validate($request, [
         'employeename'=> 'required',
         'email'=> 'required',
-        'position'=> 'required',
+        'password'=> 'required',
+        'role'=> 'required',
         ]);
 
-        employee::create([
-            'employeename' => $request->employeename,
+        User::create([
+            'name' => $request->employeename,
             'email' => $request->email,
-            'position' => $request->position,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
         ]);
         
        // Session::flash('Success','Baby Ass Successfully');
@@ -94,14 +99,17 @@ class EmployeeController extends Controller
         $this->validate($request, [
             'employeename'=> 'required',
             'email'=> 'required',
-            'position'=> 'required',
+            'password' => 'required',
+            'role' => 'required',
             ]);
 
         //dd($request->all());
         $employee = employee::find($id);
         $employee->employeeName = $request->employeename;
         $employee-> email = $request->email;
-        $employee-> position = $request->position;
+        $employee-> role = $request->role;
+        $employee-> password = Hash::make($request->password);
+        
         $employee->save();
 
         $request->session()->flash('success', 'Information Updated Successfully...');

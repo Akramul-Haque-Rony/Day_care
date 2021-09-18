@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\baby;
+use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
@@ -29,7 +31,8 @@ class BabyController extends Controller
      */
     public function create()
     {
-        return view('baby.create');
+        $parents = User::where('role', 'parent')->select('id', 'name')->get();
+        return view('baby.create')->with('parents', $parents);
     }
 
     /**
@@ -41,22 +44,22 @@ class BabyController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-        'babyname'=> 'required',
-        'parentname'=> 'required',
-        'email'=> 'required',
+            'babyname' => 'required',
+            'parent_id' => 'required',
+            'email' => 'required',
         ]);
 
         baby::create([
             'babyname' => $request->babyname,
-            'parentname' => $request->parentname,
+            'parent_id' => (int)($request->parent_id),
             'email' => $request->email,
         ]);
-        
-       // Session::flash('Success','Baby Ass Successfully');
+
+        // Session::flash('Success','Baby Ass Successfully');
         $request->session()->flash('success', 'Baby Add Successfully!');
         return redirect()->back();
-    //dd($request->all());    
-}
+        //dd($request->all());    
+    }
 
     /**
      * Display the specified resource.
@@ -92,16 +95,16 @@ class BabyController extends Controller
     public function update(Request $request, baby $baby, $id)
     {
         $this->validate($request, [
-            'babyname'=> 'required',
-            'parentname'=> 'required',
-            'email'=> 'required',
-            ]);
+            'babyname' => 'required',
+            'parentname' => 'required',
+            'email' => 'required',
+        ]);
 
         //dd($request->all());
         $baby = baby::find($id);
         $baby->babyname = $request->name;
-        $baby-> parentname = $request->parentname;
-        $baby-> email = $request->email;
+        $baby->parentname = $request->parentname;
+        $baby->email = $request->email;
         $baby->save();
 
         $request->session()->flash('success', 'Information Updated Successfully...');
@@ -117,7 +120,7 @@ class BabyController extends Controller
     public function destroy(Request $request, baby $baby)
     {
         $baby = baby::find($request->id);
-        $baby -> delete();
+        $baby->delete();
 
         $request->session()->flash('success', 'Information Deleted Successfully');
         return redirect()->back();

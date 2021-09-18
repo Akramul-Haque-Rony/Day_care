@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container"  style="padding-top: 100px; padding-left: 120px;">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="padding-left: 100px">
         @if(Session::has('success'))
         <div class="alert alert-success">{{ Session::get('success') }}</div>
         @endif
@@ -31,8 +31,17 @@
                                     <input type="text" class="form-control" name="email" placeholder="Enter Employees Email" value="{{ old('email') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Position</label>
-                                    <input type="text" class="form-control" name="position" placeholder="Enter Employee Position" value="{{ old('position') }}">
+                                    <label for="">Password</label>
+                                    <input type="text" class="form-control" name="password" placeholder="Enter Employees PassWord" value="{{ old('passwords') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Role</label>
+                                    <select name="role" class="form-control">
+                                        <option value="employee">Employee</option>
+                                        <option value="parent">Parent</option>
+
+                                    </select>
+                                    {{-- <input type="text" class="form-control" name="position" placeholder="Enter Employee Position" value="{{ old('position') }}"> --}}
                                 </div>
                                 
                                 <div class="form-group">

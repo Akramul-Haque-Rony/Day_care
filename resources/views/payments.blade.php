@@ -6,18 +6,10 @@
 				<div class="container-fluid">
 					<h3 class="page-title">payments</h3>
 					<h2>Income</h2>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="panel" style="background-color:Azure" >
-								<div class="panel-heading" >
-									<h3 class="panel-title" tyle="color:blue;">Total Collectable</h3>
-									<h4>200,000 TK</h4>
-								</div>
-								<div class="panel-body">
-									<div id="demo-line-chart" class="ct-chart"></div>
-								</div>
-							</div>
-						</div>
+					<button  class="col-md-6 panel panel-heading" style="background-color:Azure"> 						
+						<li><a href="{{ route('baby.index') }}" class="">Baby List</a></li>					
+					</button>
+		
 						<div class="col-md-6">
 							<div class="panel" style="background-color:Azure">
 								<div class="panel-heading">

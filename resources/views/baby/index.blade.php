@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" style="padding-top: 95px; padding-left: 20px;">
+<div class="container">
     <div class="row justify-content-center">
             @if(Session::has('success'))
             <div class="alert alert-success">{{ Session::get('success') }}</div>

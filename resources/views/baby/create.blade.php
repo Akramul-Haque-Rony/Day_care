@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container" style="padding-top: 100px; padding-left: 120px;">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="padding-left: 100px">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -29,7 +29,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">parent Name</label>
-                                    <input type="text" class="form-control" name="parentname" placeholder="Enter Parents Name" value="{{ old('parentname') }}">
+                                    <select name="parent_id" class="form-control">
+                                        @foreach ($parents as $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    {{-- <input type="text" class="form-control" name="parentname" placeholder="Enter Parents Name" value="{{ old('parentname') }}"> --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="">Parent Email</label>
