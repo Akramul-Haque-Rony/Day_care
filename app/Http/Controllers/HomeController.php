@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,18 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
+        $payments = Payment::orderBy('id', 'ASC')->get();
+        $total_amount = 0;
+        $total_due = 0;
+        foreach($payments as $payment){
+            $total_amount = $total_amount + $payment->amount;
+            $total_due = $total_due + $payment->due_amount;
+        }
+        $data = [
+            'total_amount' => $total_amount,
+            'total_due' => $total_due,
+        ];
+        return view('home', compact('data'));
     }
 
     public function employees()

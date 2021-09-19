@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container"  style="padding-top: 100px; padding-left: 120px;">
-    <div class="row justify-content-center" style="padding-left: 100px">
+    <div class="row ">
         @if(Session::has('success'))
         <div class="alert alert-success">{{ Session::get('success') }}</div>
         @endif
@@ -54,5 +53,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

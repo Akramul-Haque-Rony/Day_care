@@ -1,13 +1,12 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center" >
+    <div class="row" >
             @if(Session::has('success'))
             <div class="alert alert-success">{{ Session::get('success') }}</div>
             @endif
             <div class="card">
                 <div class="card-body">
-                    <table class="table ml-5">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>ID</th>

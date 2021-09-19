@@ -53,7 +53,7 @@
 				</div> --}}
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
+						{{-- <li class="dropdown">
 							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
 								<i class="lnr lnr-alarm"></i>
 								<span class="badge bg-danger">5</span>
@@ -66,8 +66,8 @@
 								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
 								<li><a href="{{ route('notifications') }}" class="more">See all notifications</a></li>
 							</ul>
-						</li>
-						<li class="dropdown">
+						</li> --}}
+						{{-- <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Basic Use</a></li>
@@ -75,7 +75,7 @@
 								<li><a href="#">Security</a></li>
 								<li><a href="#">Troubleshooting</a></li>
 							</ul>
-						</li>
+						</li> --}}
 							<li class="nav-item dropdown">
 								<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 									{{ Auth::user()->name }}
@@ -135,6 +135,7 @@
 							<a href="#payment" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Payment</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="payment" class="collapse ">
 								<ul class="nav">
+									<li><a href="{{ route('payment.index') }}" class="">payment list</a></li>
 									<li><a href="{{ route('payment.create') }}" class="">payment</a></li>
 								</ul>
 							</div>

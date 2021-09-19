@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\baby;
+use App\Models\employee;
 use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -67,18 +68,11 @@ class BabyController extends Controller
      * @param  \App\Models\baby  $baby
      * @return \Illuminate\Http\Response
      */
-    public function show(baby $baby)
+    public function show(employee $employees)
     {
-        $babys = baby::all();
-        return view('baby.show')->with('babys', $babys);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
+        $employees = User::where('role', 'parent')->get();
+        return view('baby.show')->with('employees', $employees);
+        }
     public function edit(baby $baby, $id)
     {
         $baby = baby::find($id);

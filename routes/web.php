@@ -42,7 +42,6 @@ Route::get('baby/show', [App\Http\Controllers\BabyController::class, 'show'])->n
 
 //Employee route
 Route::get('employee', [App\Http\Controllers\EmployeeController::class, 'index'])->name('employee.index');
-Route::get('employee/login', [App\Http\Controllers\EmployeeLoginController::class, 'index'])->name('employee.index');
 Route::post('employee/login', [App\Http\Controllers\EmployeeLoginController::class, 'login'])->name('employee.login');
 Route::get('employee/create', [App\Http\Controllers\EmployeeController::class, 'create'])->name('employee.create');
 Route::post('employee/store', [App\Http\Controllers\EmployeeController::class, 'store'])->name('employee.store');

@@ -21,7 +21,6 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = User::where('role', 'employee')->get();
-        
         return view('employee.index')->with('employees', $employees);
     }
 
@@ -71,8 +70,7 @@ class EmployeeController extends Controller
      */
     public function show(employee $employee)
     {
-        $babys = employee::all();
-        return view('employee.show')->with('employee', $employee);
+        
     }
 
     /**
