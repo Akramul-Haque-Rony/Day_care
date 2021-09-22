@@ -61,7 +61,7 @@ class PaymentController extends Controller
                 'transaction_id' => $request->transaction_id,
                 'due_amount' => $due,
             ]);
-            $request->session()->flash('success', 'Package Class Add Successfully!');
+            $request->session()->flash('success', 'Payment Receive Successfully!');
             return redirect()->back();      
     }
 

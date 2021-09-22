@@ -14,34 +14,25 @@ class BabyController extends Controller
     {
         $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $babys = baby::all();
         return view('baby.index')->with('babys', $babys);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function foremployee()
+    {
+        $babys = baby::all();
+        return view('baby.foremployee')->with('babys', $babys);
+    }
+
     public function create()
     {
         $parents = User::where('role', 'parent')->select('id', 'name')->get();
         return view('baby.create')->with('parents', $parents);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -56,18 +47,12 @@ class BabyController extends Controller
             'email' => $request->email,
         ]);
 
-        // Session::flash('Success','Baby Ass Successfully');
+        // Session::flash('Success','Baby Add Successfully');
         $request->session()->flash('success', 'Baby Add Successfully!');
         return redirect()->back();
         //dd($request->all());    
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
     public function show(employee $employees)
     {
         $employees = User::where('role', 'parent')->get();
@@ -79,13 +64,6 @@ class BabyController extends Controller
         return view('baby.edit')->with('baby', $baby);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, baby $baby, $id)
     {
         $this->validate($request, [
@@ -105,12 +83,6 @@ class BabyController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Request $request, baby $baby)
     {
         $baby = baby::find($request->id);

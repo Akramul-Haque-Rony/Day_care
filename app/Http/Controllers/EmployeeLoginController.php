@@ -22,14 +22,14 @@ class EmployeeLoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $role = employee::where('email', $request->email)->first()->role;
-        if($role=='parent'){
-            return view('baby.index');
+        if($role=='owner'){
+            return view('home');
         }else if($role=='employee'){
             return view('employee.employee_dashboard');
         }
         }
 
-            // return view('employee.login');
+            return view('employee.login');
         
   
        

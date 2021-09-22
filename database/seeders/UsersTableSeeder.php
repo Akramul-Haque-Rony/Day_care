@@ -11,9 +11,9 @@ class UsersTableSeeder extends Seeder
     {
         \App\Models\User::create([
             'name' => 'Akramul haque Rony',
-            'email' => 'Manager@gmail.com',
+            'email' => 'owner@gmail.com',
             'password' => Hash::make('123456789'),
-            'role' => 'manager',
+            'role' => 'owner',
         ]);
     }
 }

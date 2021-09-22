@@ -22,7 +22,7 @@
                         <form action="{{ route('package.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="">packageClass</label>
+                                <label for="">Package Class</label>
                                 <input type="text" class="form-control" name="packageClass"
                                     placeholder="Enter Package Class" value="{{ old('packageClass') }}">
                             </div>

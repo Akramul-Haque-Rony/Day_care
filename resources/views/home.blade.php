@@ -5,7 +5,7 @@
         <div class="col-md-6">
             <div class="panel" style="background-color:Azure">
                 <div class="panel-heading">
-                    <h3 class="panel-title" tyle="color:blue;">Total Collectable</h3>
+                    <h3 class="panel-title" tyle="color:blue;">Total Collected</h3>
                     <h4>{{$data["total_amount"]}} TK</h4>
                 </div>
                 <div class="panel-body">

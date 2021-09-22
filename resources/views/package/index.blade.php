@@ -9,7 +9,7 @@
     <div class="row>
         <div class=" card-header bg-primary text-light d-flex">
         <h4 class="mb-0">Package List</h4>
-        <a href="{{ route('package.create') }}" style="color: seashell" class="btn btn-primary">Add Package</a>
+        <a href="{{ route('packageprice.create') }}" style="color: seashell" class="btn btn-primary">Add Package Prices</a>
     </div>
     @if (Session::has('success'))
         <div class="alert alert-success">{{ Session::get('success') }}</div>

@@ -13,33 +13,29 @@ class EmployeeController extends Controller
     {
         $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $employees = User::where('role', 'employee')->get();
         return view('employee.index')->with('employees', $employees);
     }
+    public function manager_view()
+    {
+        $employees = User::where('role', 'manager')->get();
+        return view('employee.index')->with('employees', $employees);
+    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('employee.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function create_manager()
+    {
+        return view('employee.create_manager');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -55,43 +51,14 @@ class EmployeeController extends Controller
             'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
-        
-       // Session::flash('Success','Baby Ass Successfully');
         $request->session()->flash('success', 'Employee Join Successfully!');
-        return redirect()->back();
-    //dd($request->all());    
+        return redirect()->back();  
 }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
-    public function show(employee $employee)
-    {
-        
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
     public function edit(employee $employee, $id)
     {
         $employee = employee::find($id);
         return view('employee.edit')->with('employee', $employee);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, employee $employee, $id)
     {
         $this->validate($request, [
@@ -113,13 +80,6 @@ class EmployeeController extends Controller
         $request->session()->flash('success', 'Information Updated Successfully...');
         return redirect()->back();
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Request $request, employee $baby)
     {
         $employee = employee::find($request->id);

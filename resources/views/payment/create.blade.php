@@ -49,7 +49,7 @@
                                     <label for="">Payment Method</label>
                                     <select name="payment_method" class="form-control">
                                         <option value="cash">Cash</option>
-                                        <option value="bkash">Parent</option>
+                                        <option value="bkash">bkash</option>
                                         <option value="rocket">Rocket</option>
                                         <option value="bank">Bank</option>
                                     </select>

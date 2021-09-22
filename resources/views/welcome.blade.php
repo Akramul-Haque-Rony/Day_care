@@ -213,7 +213,7 @@
         <li><a href="#portfolio">PORTFOLIO</a></li>
         <li><a href="#pricing">PRICING</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="{{ route('login') }}">LOGIN</a></li>
+        <li><a href="{{ route('employee.index') }}">LOGIN</a></li>
       </ul>
     </div>
   </div>

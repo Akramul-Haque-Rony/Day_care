@@ -29,11 +29,17 @@ class PackageController extends Controller
         return view('package.index')->with('packages', $packages);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function forparents(package $package)
+    {
+        $packages = $package->leftJoin(
+            'packageprices',
+            'packageprices.packageClass_id',
+            'packages.id'
+        )->select('packages.id', 'packages.packageClass', 'packageprices.packageprice')->get();
+
+        return view('package.forparents')->with('packages', $packages);
+    }
+
     public function create()
     {
         return view('package.create');
