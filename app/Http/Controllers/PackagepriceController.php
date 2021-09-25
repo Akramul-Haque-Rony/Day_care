@@ -63,7 +63,7 @@ class PackagepriceController extends Controller
     public function edit(package $package, $id)
     {
         $packages = package::find($id);
-        return view('package.edit')->with('packages', $packages);
+        return view('packageprice.edit')->with('packages', $packages);
     }
 
     /**

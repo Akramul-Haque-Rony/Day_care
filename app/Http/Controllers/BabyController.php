@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\baby;
 use App\Models\employee;
+use App\Models\package;
+use App\Models\packageprice;
 use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -30,7 +32,12 @@ class BabyController extends Controller
     public function create()
     {
         $parents = User::where('role', 'parent')->select('id', 'name')->get();
-        return view('baby.create')->with('parents', $parents);
+        $packages = package::select('id', 'packageClass')->get();
+        $data = [
+            'parents' => $parents,
+            'packages' => $packages
+        ];
+        return view('baby.create')->with('data', $data);
     }
 
     public function store(Request $request)
@@ -68,14 +75,12 @@ class BabyController extends Controller
     {
         $this->validate($request, [
             'babyname' => 'required',
-            'parentname' => 'required',
             'email' => 'required',
         ]);
 
         //dd($request->all());
         $baby = baby::find($id);
-        $baby->babyname = $request->name;
-        $baby->parentname = $request->parentname;
+        $baby->babyname = $request->babyname;
         $baby->email = $request->email;
         $baby->save();
 

@@ -84,7 +84,7 @@
 						<li><a href="{{ route('home') }}" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="{{ route('employee.create') }}">Add Parent or Employee</a></li>
 						<li><a href="{{ route('baby.show') }}">Parents</a></li>
-						<li><a href="{{ route('baby.index') }}" class="">Baby List</a></li>
+						<li><a href="{{ route('baby.index') }}">Baby List</a></li>
 						<li><a href="{{ route('employee.index') }}">Employee List</a></li>
 						<li>
 							<a href="#Package" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Package</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -99,14 +99,18 @@
 						<li><a href="{{ route('complain.create') }}">Complain Box</a></li>
 
 						@elseif(Auth::user()->role == "employee")
-						<li><a href="{{ route('home') }}" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						{{-- <li><a href="{{ route('home') }}" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li> --}}
 						<li><a href="{{ route('baby.foremployee') }}" class="">Baby List</a></li>
 						<li><a href="{{ route('complain.create') }}">Complain Box</a></li>
 
-						@else	
-						<li><a href="{{ route('payment.index') }}" class="">Payment List</a></li>
+						@elseif(Auth::user()->role=="parent")	
+						{{-- <li><a href="{{ route('payment.index') }}" class="">Payment List</a></li> --}}
 						<li><a href="{{ route('package.forparents') }}" class="">Package Price</a></li>
 						<li><a href="{{ route('complain.create') }}">Complain Box</a></li>
+						
+						{{-- @else
+							return view('welcome'); --}}
+					
 						@endif
 					</ul>
 				</nav>

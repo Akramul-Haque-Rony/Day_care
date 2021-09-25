@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" style="padding-top: 100px; padding-left: 200px;">
-    <div class="row justify-content-center">
+    <div class="row">
         @if(Session::has('success'))
         <div class="alert alert-success">{{ Session::get('success') }}</div>
         @endif
@@ -20,7 +19,7 @@
                                 </ul>
                             </div>
                             @endif
-                            <form action="{{ route('package.update', ['id' => $packages->id]) }}" method="post">
+                            <form action="{{ route('packageprice.update', ['id' => $packages->id]) }}" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Package Class</label>
@@ -36,5 +35,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

@@ -29,15 +29,22 @@
                                 <div class="form-group">
                                     <label for="">parent Name</label>
                                     <select name="parent_id" class="form-control">
-                                        @foreach ($parents as $item)
-                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @foreach ($data['parents'] as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
                                     </select>
-                                    {{-- <input type="text" class="form-control" name="parentname" placeholder="Enter Parents Name" value="{{ old('parentname') }}"> --}}
                                 </div>
                                 <div class="form-group">
                                     <label for="">Parent Email</label>
                                     <input type="text" class="form-control" name="email" placeholder="Enter Parents Email" value="{{ old('email') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Select Package</label>
+                                    <select name="package_id" class="form-control">
+                                        @foreach ($data['packages'] as $item)
+                                            <option value="{{ $item->id }}">{{ $item->packageClass }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-success" >Submit Data</button>

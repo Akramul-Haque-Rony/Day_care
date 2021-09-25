@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" style="padding-top: 100px; padding-left: 120px;">
-    <div class="row justify-content-center">
+
+    <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -25,11 +25,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Baby Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $baby->babyname }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">parent Name</label>
-                                    <input type="text" class="form-control" name="parentname" value="{{ $baby->parentname }}">
+                                    <input type="text" class="form-control" name="babyname" value="{{ $baby->babyname }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Parent Email</label>
@@ -45,5 +41,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

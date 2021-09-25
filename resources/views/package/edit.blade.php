@@ -19,12 +19,12 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ route('package.update', ['id' => $packages->id]) }}" method="post">
+                            <form action="{{ route('package.update', ['id' => $package->id]) }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="">Package Class</label>
-                                    <input type="text" class="form-control" name="packageClass"
-                                        value="{{ $packages->packageClass }}">
+                                    <label for="">Package Price</label>
+                                    <input type="text" class="form-control" name="packageprice"
+                                        value="{{ $package->packageprice }}">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-success">Update package's Data</button>

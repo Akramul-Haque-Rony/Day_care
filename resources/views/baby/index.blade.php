@@ -22,6 +22,7 @@
                     <th>Baby Name</th>
                     <th>Parents Name</th>
                     <th>Email</th>
+                    <th>Package</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -33,6 +34,7 @@
                             <td>{{ $baby->babyname }}</td>
                             <td>{{\App\Models\user::where('id', $baby->parent_id)->first()->name }}</td>
                             <td>{{ $baby->email }}</td>
+                            <td>{{\App\Models\package::where('id', $baby->id)->first()->packageClass }}</td>
                             <td class="d-inline-flex">
                                 <a href="{{ route('baby.edit', ['id' => $baby->id]) }}"
                                     class="btn btn-primary btn-sm">Edit</a>

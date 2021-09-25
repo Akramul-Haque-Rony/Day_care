@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\package;
+use App\Models\packageprice;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Session\Session;
 
 class PackageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(package $package)
     {
         // $packages = $package->orderBy("id", "ASC")->get();
@@ -45,12 +42,6 @@ class PackageController extends Controller
         return view('package.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -67,34 +58,21 @@ class PackageController extends Controller
         //dd($request->all());    
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
     public function edit(package $package, $id)
     {
-        $packages = package::find($id);
-        return view('package.edit')->with('packages', $packages);
+        $package = packageprice::find($id);
+        return view('package.edit')->with('package', $package);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\baby  $baby
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, package $package, $id)
     {
         $this->validate($request, [
-            'packageClass' => 'required',
+            'packageprice' => 'required',
         ]);
 
         //dd($request->all());
-        $packages = package::find($id);
-        $packages->packageClass = $request->packageClass;
+        $packages = packageprice::find($id);
+        $packages->packageprice = $request->packageprice;
         $packages->save();
 
         $request->session()->flash('success', 'Information Updated Successfully...');

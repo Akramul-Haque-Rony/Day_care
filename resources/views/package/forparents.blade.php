@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<div>
+    <h4 class="mb-0">Package List</h4><br>
+</div>
     <div>
         <table class="table">
             <thead>

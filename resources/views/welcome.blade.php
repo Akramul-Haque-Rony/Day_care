@@ -213,7 +213,7 @@
         <li><a href="#portfolio">PORTFOLIO</a></li>
         <li><a href="#pricing">PRICING</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="{{ route('employee.index') }}">LOGIN</a></li>
+        <li><a href="{{ route('home') }}">LOGIN</a></li>
       </ul>
     </div>
   </div>
@@ -222,14 +222,6 @@
 <div class="jumbotron text-center">
   <h1>Day Care</h1> 
   <p>We specialize in baby caring</p> 
-  <form>
-    <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button>
-      </div>
-    </div>
-  </form>
 </div>
 
 <!-- Container (About Section) -->

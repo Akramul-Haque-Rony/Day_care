@@ -7,8 +7,8 @@
     </style>
     <div class="row">
         <div class="card-header text-light d-flex">
-            <h4 class="mb-0">Package Amount</h4>
-            <a href="{{ route('payment.create') }}" class="btn btn-primary">Set Payment</a>
+            <h4 class="mb-0">Payment List</h4>
+            <a href="{{ route('payment.create') }}" class="btn btn-primary">Receive Payment</a>
         </div>
         @if (Session::has('success'))
             <div class="alert alert-success">{{ Session::get('success') }}</div>

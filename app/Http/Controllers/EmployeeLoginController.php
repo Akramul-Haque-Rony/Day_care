@@ -25,11 +25,11 @@ class EmployeeLoginController extends Controller
         if($role=='owner'){
             return view('home');
         }else if($role=='employee'){
-            return view('employee.employee_dashboard');
+            return view('home');
         }
         }
 
-            return view('employee.login');
+            //return view('employee.login');
         
   
        

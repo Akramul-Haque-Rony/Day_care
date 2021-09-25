@@ -25,7 +25,6 @@ class EmployeeController extends Controller
         return view('employee.index')->with('employees', $employees);
     }
 
-
     public function create()
     {
         return view('employee.create');
@@ -51,29 +50,27 @@ class EmployeeController extends Controller
             'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
-        $request->session()->flash('success', 'Employee Join Successfully!');
+        $request->session()->flash('success', 'Successfully Join.');
         return redirect()->back();  
 }
     public function edit(employee $employee, $id)
     {
-        $employee = employee::find($id);
+        $employee = User::find($id);
         return view('employee.edit')->with('employee', $employee);
     }
     public function update(Request $request, employee $employee, $id)
     {
         $this->validate($request, [
-            'employeename'=> 'required',
+            'name'=> 'required',
             'email'=> 'required',
-            'password' => 'required',
             'role' => 'required',
             ]);
 
         //dd($request->all());
-        $employee = employee::find($id);
-        $employee->employeeName = $request->employeename;
+        $employee = User::find($id);
+        $employee->name = $request->name;
         $employee-> email = $request->email;
         $employee-> role = $request->role;
-        $employee-> password = Hash::make($request->password);
         
         $employee->save();
 
@@ -82,7 +79,7 @@ class EmployeeController extends Controller
     }
     public function destroy(Request $request, employee $baby)
     {
-        $employee = employee::find($request->id);
+        $employee = User::find($request->id);
         $employee -> delete();
 
         $request->session()->flash('success', 'Information Deleted Successfully');

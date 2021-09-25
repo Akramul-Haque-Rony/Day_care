@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class baby extends Model
 {
-    protected $fillable = ['babyname','parent_id','email'];
+    protected $fillable = ['babyname','parent_id','email',];
 }
