@@ -22,11 +22,11 @@
                             <form action="{{ route('employee.store') }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="">Employee Name</label>
+                                    <label for="">Manager Name</label>
                                     <input type="text" class="form-control" name="employeename" placeholder="Enter Employee name" value="{{ old('employeename') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Email</label>
+                                    <label for="">Manager Email</label>
                                     <input type="text" class="form-control" name="email" placeholder="Enter Employees Email" value="{{ old('email') }}">
                                 </div>
                                 <div class="form-group">
@@ -36,13 +36,10 @@
                                 <div class="form-group">
                                     <label for="">Role</label>
                                     <select name="role" class="form-control">
-                                        <option value="employee">Employee</option>
-                                        <option value="parent">Parent</option>
+                                        <option value="manager">Manager</option>
 
                                     </select>
-                                    {{-- <input type="text" class="form-control" name="position" placeholder="Enter Employee Position" value="{{ old('position') }}"> --}}
                                 </div>
-                                
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-success" >Submit Data</button>
                                 </div>

@@ -19,22 +19,15 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ route('employee.update', ['id' => $employee->id]) }}" method="post">
+                            <form action="{{ route('package.update', ['id' => $package->id]) }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="">Employee Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $employee->name }}">
+                                    <label for="">Package Price</label>
+                                    <input type="text" class="form-control" name="packageprice"
+                                        value="{{ $package->packageprice }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input type="text" class="form-control" name="email" value="{{ $employee->email }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Postion</label>
-                                    <input type="text" class="form-control" name="role" value="{{ $employee->role }}">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success">Update employee's Data</button>
+                                    <button type="submit" class="btn btn-success">Update package's Data</button>
                                 </div>
                             </form>
                         </div>

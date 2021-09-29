@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" style="padding-top: 100px; padding-left: 120px;">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -29,11 +28,23 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">parent Name</label>
-                                    <input type="text" class="form-control" name="parentname" placeholder="Enter Parents Name" value="{{ old('parentname') }}">
+                                    <select name="parent_id" class="form-control">
+                                        @foreach ($data['parents'] as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Parent Email</label>
                                     <input type="text" class="form-control" name="email" placeholder="Enter Parents Email" value="{{ old('email') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Select Package</label>
+                                    <select name="package_id" class="form-control">
+                                        @foreach ($data['packages'] as $item)
+                                            <option value="{{ $item->id }}">{{ $item->packageClass }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-success" >Submit Data</button>
@@ -45,5 +56,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

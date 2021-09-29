@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class baby extends Model
+class Complain extends Model
 {
-    protected $fillable = ['babyname','parent_id','email',];
+    protected $fillable = ['fullname','complainemail','complain'];
 }

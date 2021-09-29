@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
-
     <div class="row">
+        @if(Session::has('success'))
+        <div class="alert alert-success">{{ Session::get('success') }}</div>
+        @endif
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -17,22 +19,14 @@
                                 </ul>
                             </div>
                             @endif
-
-                            @if(Session::has('success'))
-                            <div class="alert alert-success">{{ Session::get('success') }}</div>
-                            @endif
-                            <form action="{{ route('baby.update', ['id' => $baby->id]) }}" method="post">
+                            <form action="{{ route('packageprice.update', ['id' => $packages->id]) }}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="">Baby Name</label>
-                                    <input type="text" class="form-control" name="babyname" value="{{ $baby->babyname }}">
+                                    <label for="">Package Class</label>
+                                    <input type="text" class="form-control" name="packageClass" value="{{ $packages->packageClass }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Parent Email</label>
-                                    <input type="text" class="form-control" name="email" value="{{ $baby->email }}">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success" >Update Baby's Data</button>
+                                    <button type="submit" class="btn btn-success" >Update package's Data</button>
                                 </div>
                             </form>
                         </div>
